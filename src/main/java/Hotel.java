@@ -1,13 +1,38 @@
-import java.util.HashMap;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Hotel {
 
-    private HashMap<String, Bedroom> bedrooms;
-    private HashMap<String, ConferenceRoom> conferenceRooms;
+    private ArrayList<Bedroom> bedrooms;
+    private ArrayList<ConferenceRoom> conferenceRooms;
 
     public Hotel() {
-        this.bedrooms = new HashMap<String, Bedroom>();
-        this.conferenceRooms = new HashMap<String, ConferenceRoom>();
-           
+        this.bedrooms = new ArrayList<Bedroom>();
+        this.conferenceRooms = new ArrayList<ConferenceRoom>();
+
+    }
+
+    public void addBedroom(Bedroom bedroom1) {
+        this.bedrooms.add(bedroom1);
+    }
+
+    public int bedroomCount() {
+        return this.bedrooms.size();
+    }
+
+    public void addConferenceRoom(ConferenceRoom picadilly) {
+        this.conferenceRooms.add(picadilly);
+    }
+
+    public int conferenceRoomCount() {
+        return this.conferenceRooms.size();
+    }
+
+    public void checkInToBedroom(Bedroom bedroom1, Guest guest) {
+        bedroom1.addGuest(guest);
+    }
+
+    public void checkInToConferenceRoom(ConferenceRoom picadilly, Guest guest) {
+        picadilly.addGuest(guest);
     }
 }
