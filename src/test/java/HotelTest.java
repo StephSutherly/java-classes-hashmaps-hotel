@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class HotelTest {
 
@@ -44,6 +45,12 @@ public class HotelTest {
         hotel.checkInToConferenceRoom(picadilly, guest);
         assertEquals(1, hotel.conferenceRoomCount());
         assertEquals(1, picadilly.guestCount());
+    }
+
+    @Test
+    public void canBookBedroom() {
+        Booking booking = hotel.bookRoom(bedroom1, 3);
+        assertNotEquals(null, booking);
     }
 
 }

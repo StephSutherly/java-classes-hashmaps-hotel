@@ -35,4 +35,10 @@ public class Hotel {
     public void checkInToConferenceRoom(ConferenceRoom picadilly, Guest guest) {
         picadilly.addGuest(guest);
     }
+
+    public Booking bookRoom(Bedroom bedroom1, int numOfNights) {
+        Booking booking = new Booking(bedroom1, numOfNights);
+        return booking;
+    }
+
 }
